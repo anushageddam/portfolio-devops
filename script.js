@@ -16,9 +16,19 @@ let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
+
 function typeEffect() {
 
+    if (!typingText) {
+        return;
+    }
+
     const currentRole = roles[roleIndex];
+
+
+    /* =========================
+       TYPING
+    ========================= */
 
     if (!deleting) {
 
@@ -26,6 +36,7 @@ function typeEffect() {
             currentRole.substring(0, charIndex + 1);
 
         charIndex++;
+
 
         if (charIndex === currentRole.length) {
 
@@ -36,36 +47,45 @@ function typeEffect() {
             return;
         }
 
-        setTimeout(typeEffect, 75);
 
-    } else {
+        setTimeout(typeEffect, 70);
 
-        typingText.textContent =
-            currentRole.substring(0, charIndex - 1);
-
-        charIndex--;
-
-        if (charIndex === 0) {
-
-            deleting = false;
-
-            roleIndex =
-                (roleIndex + 1) % roles.length;
-
-            setTimeout(typeEffect, 400);
-
-            return;
-        }
-
-        setTimeout(typeEffect, 40);
+        return;
     }
+
+
+    /* =========================
+       DELETING
+    ========================= */
+
+    typingText.textContent =
+        currentRole.substring(0, charIndex - 1);
+
+    charIndex--;
+
+
+    if (charIndex === 0) {
+
+        deleting = false;
+
+        roleIndex =
+            (roleIndex + 1) % roles.length;
+
+        setTimeout(typeEffect, 400);
+
+        return;
+    }
+
+
+    setTimeout(typeEffect, 40);
 }
+
 
 typeEffect();
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE NAVIGATION
 ========================================================= */
 
 const menuToggle =
@@ -78,33 +98,50 @@ const navItems =
     document.querySelectorAll(".nav-link");
 
 
-menuToggle.addEventListener("click", () => {
+if (menuToggle && navLinks) {
 
-    menuToggle.classList.toggle("active");
+    menuToggle.addEventListener("click", () => {
 
-    navLinks.classList.toggle("open");
+        menuToggle.classList.toggle("active");
 
-});
+        navLinks.classList.toggle("open");
+
+    });
+
+}
 
 
-/* Close menu after clicking a link */
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
 
 navItems.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        menuToggle.classList.remove("active");
+        if (menuToggle) {
+            menuToggle.classList.remove("active");
+        }
 
-        navLinks.classList.remove("open");
+        if (navLinks) {
+            navLinks.classList.remove("open");
+        }
 
     });
 
 });
 
 
-/* Close menu if clicking outside */
+/* =========================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================================= */
 
 document.addEventListener("click", event => {
+
+    if (!navLinks || !menuToggle) {
+        return;
+    }
+
 
     if (
         !navLinks.contains(event.target) &&
@@ -121,7 +158,7 @@ document.addEventListener("click", event => {
 
 
 /* =========================================================
-   ACTIVE NAVIGATION LINK
+   ACTIVE NAVIGATION
 ========================================================= */
 
 const sections =
@@ -132,17 +169,19 @@ function updateActiveNav() {
 
     let currentSection = "";
 
+
     sections.forEach(section => {
 
         const sectionTop =
-            section.offsetTop - 150;
+            section.offsetTop - 180;
 
-        const sectionHeight =
-            section.offsetHeight;
+        const sectionBottom =
+            sectionTop + section.offsetHeight;
+
 
         if (
             window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
+            window.scrollY < sectionBottom
         ) {
 
             currentSection =
@@ -156,6 +195,7 @@ function updateActiveNav() {
     navItems.forEach(link => {
 
         link.classList.remove("active");
+
 
         if (
             link.getAttribute("href") ===
@@ -173,7 +213,8 @@ function updateActiveNav() {
 
 window.addEventListener(
     "scroll",
-    updateActiveNav
+    updateActiveNav,
+    { passive: true }
 );
 
 
@@ -187,6 +228,7 @@ const revealElements =
 
 const revealObserver =
     new IntersectionObserver(
+
         entries => {
 
             entries.forEach(entry => {
@@ -204,9 +246,11 @@ const revealObserver =
             });
 
         },
+
         {
             threshold: 0.12
         }
+
     );
 
 
@@ -218,7 +262,7 @@ revealElements.forEach(element => {
 
 
 /* =========================================================
-   PROJECT CARD TILT
+   PROJECT CARD 3D TILT
 ========================================================= */
 
 const projectCards =
@@ -227,10 +271,19 @@ const projectCards =
 
 projectCards.forEach(card => {
 
+
     card.addEventListener("mousemove", event => {
+
+        /* Disable tilt on touch-sized screens */
+
+        if (window.innerWidth <= 700) {
+            return;
+        }
+
 
         const rect =
             card.getBoundingClientRect();
+
 
         const x =
             event.clientX - rect.left;
@@ -238,20 +291,23 @@ projectCards.forEach(card => {
         const y =
             event.clientY - rect.top;
 
+
         const centerX =
             rect.width / 2;
 
         const centerY =
             rect.height / 2;
 
+
         const rotateX =
-            ((y - centerY) / centerY) * -3;
+            ((y - centerY) / centerY) * -2.5;
 
         const rotateY =
-            ((x - centerX) / centerX) * 3;
+            ((x - centerX) / centerX) * 2.5;
+
 
         card.style.transform =
-            `perspective(800px)
+            `perspective(1000px)
              rotateX(${rotateX}deg)
              rotateY(${rotateY}deg)
              translateY(-5px)`;
@@ -262,7 +318,7 @@ projectCards.forEach(card => {
     card.addEventListener("mouseleave", () => {
 
         card.style.transform =
-            "perspective(800px) rotateX(0) rotateY(0)";
+            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
 
     });
 
@@ -275,6 +331,7 @@ projectCards.forEach(card => {
 
 const year =
     document.getElementById("year");
+
 
 if (year) {
 
@@ -290,11 +347,15 @@ if (year) {
 
 window.addEventListener("resize", () => {
 
-    if (window.innerWidth > 800) {
+    if (window.innerWidth > 900) {
 
-        navLinks.classList.remove("open");
+        if (navLinks) {
+            navLinks.classList.remove("open");
+        }
 
-        menuToggle.classList.remove("active");
+        if (menuToggle) {
+            menuToggle.classList.remove("active");
+        }
 
     }
 
@@ -302,7 +363,7 @@ window.addEventListener("resize", () => {
 
 
 /* =========================================================
-   INITIAL NAV CHECK
+   INITIAL NAVIGATION CHECK
 ========================================================= */
 
 updateActiveNav();
