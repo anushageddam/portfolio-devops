@@ -48,8 +48,8 @@ button {
     inset: 0;
 
     background-image:
-        linear-gradient(rgba(23, 54, 93, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(23, 54, 93, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(23, 107, 77, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 107, 77, 0.035) 1px, transparent 1px);
 
     background-size: 55px 55px;
 
@@ -73,20 +73,20 @@ button {
 .blob-one {
     top: -180px;
     left: -120px;
-    background: #496b91;
+    background: #4f9b78;
 }
 
 .blob-two {
     top: 35%;
     right: -220px;
-    background: #8da6c1;
+    background: #8bbda7;
     animation-delay: -4s;
 }
 
 .blob-three {
     bottom: -220px;
     left: 30%;
-    background: #294d75;
+    background: #246b50;
     animation-delay: -7s;
 }
 
@@ -141,7 +141,7 @@ button {
 }
 
 .logo span {
-    color: #17365d;
+    color: #176b4d;
 }
 
 .nav-links {
@@ -161,7 +161,7 @@ button {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #17365d;
+    color: #176b4d;
 }
 
 .nav-link::after {
@@ -173,7 +173,7 @@ button {
     width: 0;
     height: 2px;
 
-    background: #17365d;
+    background: #176b4d;
     border-radius: 10px;
 
     transition: 0.3s ease;
@@ -220,7 +220,7 @@ button {
 .section-heading p,
 .contact-label,
 .sub-heading p {
-    color: #2f5d8c;
+    color: #2f8062;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -250,7 +250,7 @@ button {
 .section-heading h2 span,
 .sub-heading h3 span,
 .contact-box h2 span {
-    color: #17365d;
+    color: #176b4d;
 }
 
 
@@ -286,7 +286,7 @@ button {
 
 .hero h1 span {
     display: block;
-    color: #17365d;
+    color: #176b4d;
 }
 
 .hero h2 {
@@ -298,7 +298,7 @@ button {
 }
 
 .cursor {
-    color: #2f5d8c;
+    color: #2f8062;
     animation: blink 0.8s infinite;
 }
 
@@ -339,20 +339,20 @@ button {
 }
 
 .btn-primary {
-    background: #17365d;
+    background: #176b4d;
     color: #ffffff;
 
     box-shadow:
-        0 10px 30px rgba(23, 54, 93, 0.20);
+        0 10px 30px rgba(23, 107, 77, 0.20);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
 
-    background: #2f5d8c;
+    background: #2f8062;
 
     box-shadow:
-        0 15px 40px rgba(23, 54, 93, 0.28);
+        0 15px 40px rgba(23, 107, 77, 0.28);
 }
 
 .btn-secondary {
@@ -364,8 +364,8 @@ button {
 .btn-secondary:hover {
     transform: translateY(-3px);
 
-    border-color: #17365d;
-    color: #17365d;
+    border-color: #176b4d;
+    color: #176b4d;
 
     box-shadow:
         0 8px 25px rgba(16, 24, 40, 0.07);
@@ -395,12 +395,12 @@ button {
 }
 
 .social-links a:hover {
-    color: #17365d;
-    border-color: #2f5d8c;
+    color: #176b4d;
+    border-color: #2f8062;
     transform: translateY(-4px);
 
     box-shadow:
-        0 8px 20px rgba(23, 54, 93, 0.12);
+        0 8px 20px rgba(23, 107, 77, 0.12);
 }
 
 
@@ -460,7 +460,7 @@ button {
 
     border-radius: 14px;
 
-    background: #17365d;
+    background: #176b4d;
     color: #ffffff;
 
     font-family: "Space Grotesk", sans-serif;
@@ -481,7 +481,7 @@ button {
 
 .card-top > i {
     margin-left: auto;
-    color: #2f5d8c;
+    color: #2f8062;
 }
 
 .chart {
@@ -502,8 +502,8 @@ button {
 
     background: linear-gradient(
         to top,
-        #17365d,
-        #5f83a8
+        #176b4d,
+        #5fa88a
     );
 
     animation: barPulse 2s ease-in-out infinite alternate;
@@ -586,7 +586,7 @@ button {
 }
 
 .floating-card i {
-    color: #2f5d8c;
+    color: #2f8062;
 }
 
 .powerbi {
@@ -621,7 +621,7 @@ button {
 .orbit {
     position: absolute;
 
-    border: 1px solid rgba(23, 54, 93, 0.14);
+    border: 1px solid rgba(23, 107, 77, 0.14);
     border-radius: 50%;
 }
 
@@ -691,7 +691,7 @@ button {
 .stat-card:hover {
     transform: translateY(-5px);
 
-    border-color: rgba(23, 54, 93, 0.35);
+    border-color: rgba(23, 107, 77, 0.35);
 
     box-shadow:
         0 15px 35px rgba(16, 24, 40, 0.08);
@@ -730,7 +730,7 @@ button {
 
     width: 1px;
 
-    background: rgba(23, 54, 93, 0.25);
+    background: rgba(23, 107, 77, 0.25);
 }
 
 .timeline-item {
@@ -750,10 +750,10 @@ button {
     border: 3px solid #f5f3ee;
     border-radius: 50%;
 
-    background: #17365d;
+    background: #176b4d;
 
     box-shadow:
-        0 0 18px rgba(23, 54, 93, 0.35);
+        0 0 18px rgba(23, 107, 77, 0.35);
 }
 
 .timeline-content {
@@ -773,7 +773,7 @@ button {
 .timeline-content:hover {
     transform: translateX(6px);
 
-    border-color: rgba(23, 54, 93, 0.3);
+    border-color: rgba(23, 107, 77, 0.3);
 
     box-shadow:
         0 15px 35px rgba(16, 24, 40, 0.08);
@@ -783,7 +783,7 @@ button {
     display: inline-block;
     margin-bottom: 10px;
 
-    color: #2f5d8c;
+    color: #2f8062;
     font-size: 12px;
     font-weight: 600;
 }
@@ -831,10 +831,10 @@ button {
 
     border-radius: 7px;
 
-    background: #eaf0f7;
-    border: 1px solid #d5dfeb;
+    background: #e8f4ee;
+    border: 1px solid #cfe5da;
 
-    color: #294d75;
+    color: #246b50;
     font-size: 11px;
 }
 
@@ -867,7 +867,7 @@ button {
 .skill-card:hover {
     transform: translateY(-7px);
 
-    border-color: rgba(23, 54, 93, 0.3);
+    border-color: rgba(23, 107, 77, 0.3);
 
     box-shadow:
         0 15px 35px rgba(16, 24, 40, 0.08);
@@ -885,8 +885,8 @@ button {
 
     border-radius: 12px;
 
-    background: #eaf0f7;
-    color: #17365d;
+    background: #e8f4ee;
+    color: #176b4d;
 }
 
 .skill-card h3 {
@@ -948,7 +948,7 @@ button {
 
     border-radius: 50%;
 
-    background: #496b91;
+    background: #4f9b78;
 
     filter: blur(90px);
 
@@ -956,7 +956,7 @@ button {
 }
 
 .project-card:hover {
-    border-color: rgba(23, 54, 93, 0.3);
+    border-color: rgba(23, 107, 77, 0.3);
 
     box-shadow:
         0 18px 40px rgba(16, 24, 40, 0.08);
@@ -978,8 +978,8 @@ button {
 
     border-radius: 13px;
 
-    background: #eaf0f7;
-    color: #17365d;
+    background: #e8f4ee;
+    color: #176b4d;
 }
 
 .project-category {
@@ -1010,9 +1010,9 @@ button {
     display: flex;
     flex-direction: column;
 
-    border-left: 2px solid #17365d;
+    border-left: 2px solid #176b4d;
 
-    background: #f0f3f7;
+    background: #eef6f2;
 }
 
 .impact strong {
@@ -1061,7 +1061,7 @@ button {
 .education-card:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(23, 54, 93, 0.3);
+    border-color: rgba(23, 107, 77, 0.3);
 
     box-shadow:
         0 15px 35px rgba(16, 24, 40, 0.08);
@@ -1079,12 +1079,12 @@ button {
 
     border-radius: 12px;
 
-    background: #eaf0f7;
-    color: #17365d;
+    background: #e8f4ee;
+    color: #176b4d;
 }
 
 .education-year {
-    color: #2f5d8c;
+    color: #2f8062;
     font-size: 11px;
     font-weight: 600;
 }
@@ -1164,14 +1164,14 @@ button {
 .certificate-card:hover {
     transform: translateY(-4px);
 
-    border-color: rgba(23, 54, 93, 0.3);
+    border-color: rgba(23, 107, 77, 0.3);
 
     box-shadow:
         0 12px 30px rgba(16, 24, 40, 0.07);
 }
 
 .certificate-card > i {
-    color: #17365d;
+    color: #176b4d;
     font-size: 21px;
 }
 
@@ -1214,7 +1214,7 @@ button {
 
 .achievement-card > i {
     font-size: 30px;
-    color: #17365d;
+    color: #176b4d;
 }
 
 .achievement-card h3 {
@@ -1264,7 +1264,7 @@ button {
 }
 
 .strength-box h3 i {
-    color: #17365d;
+    color: #176b4d;
 }
 
 .strength-tags span {
@@ -1288,8 +1288,8 @@ button {
 
     border-radius: 8px;
 
-    background: #eaf0f7;
-    color: #294d75;
+    background: #e8f4ee;
+    color: #246b50;
 
     font-size: 12px;
 }
@@ -1306,13 +1306,13 @@ button {
 .contact-box {
     padding: 70px 60px;
 
-    border: 1px solid rgba(23, 54, 93, 0.22);
+    border: 1px solid rgba(23, 107, 77, 0.22);
     border-radius: 25px;
 
     background:
         radial-gradient(
             circle at 80% 20%,
-            rgba(73, 107, 145, 0.13),
+            rgba(79, 155, 120, 0.13),
             transparent 35%
         ),
         #ffffff;
@@ -1376,7 +1376,7 @@ footer {
 .footer-logo {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 800;
-    color: #17365d;
+    color: #176b4d;
     font-size: 22px;
 }
 
@@ -1396,7 +1396,7 @@ footer {
 }
 
 .footer-socials a:hover {
-    color: #17365d;
+    color: #176b4d;
 }
 
 .copyright {
