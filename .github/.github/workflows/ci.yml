@@ -1,0 +1,32 @@
+name: Portfolio CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        run: |
+          test -f index.html
+          echo "HTML file found"
+
+      - name: Validate CSS
+        run: |
+          test -f style.css
+          echo "CSS file found"
+
+      - name: Validate JavaScript
+        run: |
+          test -f script.js
+          echo "JavaScript file found"
